@@ -261,8 +261,8 @@ function App() {
           />
           <Route path="/profesorado-danza-jazz" element={<ProfesoradoJazz />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }

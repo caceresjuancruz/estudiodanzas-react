@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function Clases() {
   return (
-    <div className="container">
+    <div className="container mt-3">
       <div
         className="text-center mx-auto mb-5 wow fadeInUp"
         data-wow-delay="0.1s"

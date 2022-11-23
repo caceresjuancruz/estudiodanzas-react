@@ -4,147 +4,138 @@ function Estudio() {
   return (
     <div>
       {/* About Start */}
-      <div className="container-xxl p-0">
-        <div className="container">
-          <div className="row g-5 mt-5">
+
+      <div className="container">
+        <div className="row g-5 mt-5">
+          <div className="col-lg-6 my-auto wow fadeInUp" data-wow-delay="0.1s">
             <div
-              className="col-lg-6 my-auto wow fadeInUp"
-              data-wow-delay="0.1s"
+              id="carouselExampleControls"
+              className="carousel slide carousel-fade border border-primary p-2 rounded"
+              data-ride="carousel"
             >
-              <div
-                id="carouselExampleControls"
-                className="carousel slide carousel-fade border border-primary p-2 rounded"
-                data-ride="carousel"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img
-                      loading="lazy"
-                      src="img/nuestroespacio.jpg"
-                      className="d-block w-100 rounded"
-                      alt="Nuestro espacio"
-                      style={{ height: "300px !important" }}
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      loading="lazy"
-                      src="img/salon1.jpg"
-                      className="d-block w-100 rounded"
-                      alt="Salon"
-                      style={{ height: "300px !important" }}
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      loading="lazy"
-                      src="img/salon2.jpg"
-                      className="d-block w-100 rounded"
-                      alt="Salon 2"
-                      style={{ height: "300px !important" }}
-                    />
-                  </div>
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img
+                    loading="lazy"
+                    src="img/nuestroespacio.jpg"
+                    className="d-block w-100 rounded"
+                    alt="Nuestro espacio"
+                    style={{ height: "300px !important" }}
+                  />
                 </div>
-                <button
-                  className="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#carouselExampleControls"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    className="carousel-control-prev-icon w-25"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="visually-hidden">Previous</span>
-                </button>
-                <button
-                  className="carousel-control-next"
-                  type="button"
-                  data-bs-target="#carouselExampleControls"
-                  data-bs-slide="next"
-                >
-                  <span
-                    className="carousel-control-next-icon w-25"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="visually-hidden">Next</span>
-                </button>
+                <div className="carousel-item">
+                  <img
+                    loading="lazy"
+                    src="img/salon1.jpg"
+                    className="d-block w-100 rounded"
+                    alt="Salon"
+                    style={{ height: "300px !important" }}
+                  />
+                </div>
+                <div className="carousel-item">
+                  <img
+                    loading="lazy"
+                    src="img/salon2.jpg"
+                    className="d-block w-100 rounded"
+                    alt="Salon 2"
+                    style={{ height: "300px !important" }}
+                  />
+                </div>
               </div>
+              <button
+                className="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev"
+              >
+                <span
+                  className="carousel-control-prev-icon w-25"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button
+                className="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="next"
+              >
+                <span
+                  className="carousel-control-next-icon w-25"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Next</span>
+              </button>
             </div>
-            <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div className="h-100">
-                <h6 className="section-title bg-white text-start text-primary pe-3">
-                  Nuestro espacio
-                </h6>
-                <h1 className="display-6 mb-4">
-                  <span className="text-primary">34 años</span> de trayectoria
-                </h1>
-                <p>
-                  Desde 1988 el Estudio de Danzas Viviana Musso, ubicado en la
-                  ciudad de Rafaela, se caracteriza por brindar sólida formación
-                  artística en técnicas de la danza. El espacio cuenta con dos
-                  salones totalmente equipados, escenario y vestuarios.
-                </p>
-                <p className="mb-4">
-                  El año académico abarca desde marzo a diciembre, y en los
-                  meses de enero y febrero se realizan talleres y seminarios de
-                  verano. Las clases se dividen por niveles y edades que abarcan
-                  desde los 3 años y sin límite de edad. Se realizan dos Shows
-                  anuales donde el alumnado muestra el trabajo realizado.
-                </p>
-                <div className="d-flex align-items-center mb-4 pb-2"></div>
-              </div>
+          </div>
+          <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div className="h-100">
+              <h6 className="section-title bg-white text-start text-primary pe-3">
+                Nuestro espacio
+              </h6>
+              <h1 className="display-6 mb-4">
+                <span className="text-primary">34 años</span> de trayectoria
+              </h1>
+              <p>
+                Desde 1988 el Estudio de Danzas Viviana Musso, ubicado en la
+                ciudad de Rafaela, se caracteriza por brindar sólida formación
+                artística en técnicas de la danza. El espacio cuenta con dos
+                salones totalmente equipados, escenario y vestuarios.
+              </p>
+              <p className="mb-4">
+                El año académico abarca desde marzo a diciembre, y en los meses
+                de enero y febrero se realizan talleres y seminarios de verano.
+                Las clases se dividen por niveles y edades que abarcan desde los
+                3 años y sin límite de edad. Se realizan dos Shows anuales donde
+                el alumnado muestra el trabajo realizado.
+              </p>
+              <div className="d-flex align-items-center mb-4 pb-2"></div>
             </div>
           </div>
         </div>
       </div>
+
       {/* About End */}
 
       {/* Estudio Start */}
-      <div className="container-xxl p-0">
-        <div className="container">
-          <div className="row g-5">
-            <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div className="h-100">
-                <h6
-                  className="section-title bg-white text-start text-primary pe-3"
-                  id="estudio"
-                >
-                  ESTUDIO HOMOLOGADO
-                </h6>
-                <h1 className="display-6 mb-4">Fundación Julio Bocca</h1>
-                <p className="mb-4">
-                  "La fundación con este proyecto pretende acortar las
-                  distancias con clases de revisión, videoconferencias
-                  mensuales, y clases de actualización a su núcleo de estudios
-                  seleccionados que amparan un grupo de alumnos monitoreados por
-                  nuestros maestros ayudándoles así a formar parte de una
-                  filosofía académica y de excelencia de nuestra Fundación Julio
-                  Bocca, sin precedentes"
-                </p>
-                <p className="mb-4">
-                  Confirmar, ratificar, rectificar y certificar el nivel del un
-                  alumno es parte del proyecto en sí, pero el contacto a la
-                  distancia, la acción motivadora que genera una institución
-                  como la nuestra investigando las necesidades de los
-                  profesionales dispersos en toda Latinoamérica nos lleva a
-                  pensar que el proyecto es mucho más inclusivo y excelente de
-                  lo que aspira.
-                </p>
-              </div>
+
+      <div className="container">
+        <div className="row g-5">
+          <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div className="h-100">
+              <h6
+                className="section-title bg-white text-start text-primary pe-3"
+                id="estudio"
+              >
+                ESTUDIO HOMOLOGADO
+              </h6>
+              <h1 className="display-6 mb-4">Fundación Julio Bocca</h1>
+              <p className="mb-4">
+                "La fundación con este proyecto pretende acortar las distancias
+                con clases de revisión, videoconferencias mensuales, y clases de
+                actualización a su núcleo de estudios seleccionados que amparan
+                un grupo de alumnos monitoreados por nuestros maestros
+                ayudándoles así a formar parte de una filosofía académica y de
+                excelencia de nuestra Fundación Julio Bocca, sin precedentes"
+              </p>
+              <p className="mb-4">
+                Confirmar, ratificar, rectificar y certificar el nivel del un
+                alumno es parte del proyecto en sí, pero el contacto a la
+                distancia, la acción motivadora que genera una institución como
+                la nuestra investigando las necesidades de los profesionales
+                dispersos en toda Latinoamérica nos lleva a pensar que el
+                proyecto es mucho más inclusivo y excelente de lo que aspira.
+              </p>
             </div>
-            <div
-              className="col-lg-6 wow fadeInUp my-auto"
-              data-wow-delay="0.1s"
-            >
-              <img
-                loading="lazy"
-                className="img-fluid"
-                id="homologado"
-                src="img/HOMOLOGADO.png"
-                alt="Estudio Homologado por Fundacion Julio Bocca"
-              />
-            </div>
+          </div>
+          <div className="col-lg-6 wow fadeInUp my-auto" data-wow-delay="0.1s">
+            <img
+              loading="lazy"
+              className="img-fluid"
+              id="homologado"
+              src="img/HOMOLOGADO.png"
+              alt="Estudio Homologado por Fundacion Julio Bocca"
+            />
           </div>
         </div>
       </div>
@@ -180,21 +171,7 @@ function Estudio() {
               id="dropdownMenuButton1"
               data-bs-toggle="collapse"
               data-bs-target="#directoraCollapse"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-chevron-down"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-                />
-              </svg>
-            </button>
+            ></button>
             <div
               className="dropdown-menu collapse p-4 m-0 border-0 text-muted"
               style={{ width: "auto" }}

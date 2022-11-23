@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
@@ -54,18 +55,42 @@ function Footer() {
             </div>
             <div className="col-lg-6 col-md-6">
               <h5 className="text-light mb-4">Menu</h5>
-              <a className="btn btn-link" href="/">
+
+              <NavLink
+                className="btn btn-link"
+                to="/"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Inicio
-              </a>
-              <a className="btn btn-link" href="/#estudio">
+              </NavLink>
+              <NavLink
+                className="btn btn-link"
+                to="/estudio"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Estudio
-              </a>
-              <a className="btn btn-link" href="/#clases">
+              </NavLink>
+              <NavLink
+                className="btn btn-link"
+                to="/clases"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Clases
-              </a>
-              <a className="btn btn-link" href="/contacto">
+              </NavLink>
+              <NavLink
+                className="btn btn-link"
+                to="/contacto"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Contacto
-              </a>
+              </NavLink>
+              <NavLink
+                className="btn btn-link"
+                to="/show"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Show
+              </NavLink>
             </div>
           </div>
         </div>

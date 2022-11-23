@@ -40,23 +40,28 @@ function Navbar() {
             <Router>
               <ol className="breadcrumb mb-0">
                 <li className="breadcrumb-item">
-                  <a className="small text-secondary" href="/">
+                  <NavLink className="small text-secondary" to="/">
                     Inicio
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="breadcrumb-item">
-                  <a className="small text-secondary" href="/#estudio">
+                  <NavLink className="small text-secondary" to="/estudio">
                     Estudio
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="breadcrumb-item">
-                  <a className="small text-secondary" href="/#clases">
+                  <NavLink className="small text-secondary" to="/clases">
                     Clases
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="breadcrumb-item">
                   <NavLink className="small text-secondary" to="/contacto">
                     Contacto
+                  </NavLink>
+                </li>
+                <li className="breadcrumb-item">
+                  <NavLink className="small text-secondary" to="/show">
+                    Show
                   </NavLink>
                 </li>
               </ol>
@@ -111,10 +116,8 @@ function Navbar() {
                   src="./img/vividanzalogo.png"
                   alt="Logo"
                 />
-                <span className="nombre-logo">
-                  Estudio de Danzas
-                  <span id="viviana-musso">Viviana Musso</span>
-                </span>
+                <div className="nombre-logo">Estudio de Danzas &nbsp;</div>
+                <div id="viviana-musso">Viviana Musso</div>
               </h1>
             </a>
           </div>
@@ -182,20 +185,46 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <div className="navbar-nav me-auto p-3 p-lg-0">
+        <div
+          className="collapse navbar-collapse sticky-top"
+          id="navbarCollapse"
+        >
+          <div className="navbar-nav me-auto p-3 p-lg-0 sticky-top">
             <Router>
-              <a href="/" className="nav-item nav-link">
+              <NavLink
+                to="/"
+                className="nav-item nav-link"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Inicio
-              </a>
-              <a href="/#estudio" className="nav-item nav-link">
+              </NavLink>
+              <NavLink
+                to="/estudio"
+                className="nav-item nav-link"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Estudio
-              </a>
-              <a href="/#clases" className="nav-item nav-link">
+              </NavLink>
+              <NavLink
+                to="/clases"
+                className="nav-item nav-link"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Clases
-              </a>
-              <NavLink to="/contacto" className="nav-item nav-link">
+              </NavLink>
+              <NavLink
+                to="/contacto"
+                className="nav-item nav-link"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Contacto
+              </NavLink>
+              <NavLink
+                to="/show"
+                className="nav-item nav-link"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Show
               </NavLink>
             </Router>
           </div>
