@@ -7,10 +7,13 @@ function Estudio() {
 
       <div className="container">
         <div className="row g-5 mt-5">
-          <div className="col-lg-6 my-auto wow fadeInUp" data-wow-delay="0.1s">
+          <div className="col-lg-6 p-2 mt-0 wow fadeInUp" data-wow-delay="0.1s">
+            <h6 className="section-title bg-white text-start text-primary pe-3">
+              Nuestro espacio
+            </h6>
             <div
               id="carouselExampleControls"
-              className="carousel slide carousel-fade border border-primary p-2 rounded"
+              className="carousel slide carousel-fade p-1 rounded"
               data-ride="carousel"
             >
               <div className="carousel-inner">
@@ -68,11 +71,9 @@ function Estudio() {
               </button>
             </div>
           </div>
-          <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+
+          <div className="col-lg-6 p-2 mt-0 wow fadeInUp" data-wow-delay="0.5s">
             <div className="h-100">
-              <h6 className="section-title bg-white text-start text-primary pe-3">
-                Nuestro espacio
-              </h6>
               <h1 className="display-6 mb-4">
                 <span className="text-primary">34 años</span> de trayectoria
               </h1>
@@ -89,7 +90,6 @@ function Estudio() {
                 3 años y sin límite de edad. Se realizan dos Shows anuales donde
                 el alumnado muestra el trabajo realizado.
               </p>
-              <div className="d-flex align-items-center mb-4 pb-2"></div>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@ function Estudio() {
 
       <div className="container">
         <div className="row g-5">
-          <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div className="col-lg-6 p-2 wow fadeInUp" data-wow-delay="0.1s">
             <div className="h-100">
               <h6
                 className="section-title bg-white text-start text-primary pe-3"
@@ -155,7 +155,7 @@ function Estudio() {
         <div className="container text-center">
           <img
             loading="lazy"
-            className="img-fluid rounded-circle p-2 mb-4"
+            className="img-fluid rounded-circle p-1 mb-4"
             id="directora-img"
             src="img/vivianamussoperfil.png"
             alt="Directora"
@@ -226,6 +226,15 @@ function Estudio() {
       {/* Directora End */}
 
       {/* Estudio End */}
+      <style jsx="true">
+        {`
+          @media (min-width: 992px) {
+            #carouselExampleControls {
+              margin-right: 2rem;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 }

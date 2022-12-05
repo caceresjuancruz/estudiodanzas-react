@@ -16,15 +16,12 @@ function Contacto() {
       </div>
       {/* Page Header End */}
 
-      <div className="row m-0 mb-5">
+      <div className="row my-5 m-0">
         <div className="col-12 col-lg-6 p-0 px-lg-3">
           {/* Google Map Start */}
-          <div
-            className="container-xxl px-lg-2 wow fadeIn"
-            data-wow-delay="0.1s"
-          >
+          <div className="container-xxl px-lg-2" data-wow-delay="0.1s">
             <iframe
-              className="w-100 mb-2 rounded-3"
+              className="w-100 mb-2 rounded-3 wow fadeInUp"
               id="mapa"
               title="mapa"
               style={{ height: "450px" }}
@@ -37,10 +34,10 @@ function Contacto() {
           </div>
           {/* Google Map End */}
         </div>
-        <div className="col-12 col-lg-6 p-0">
+        <div className="col-12 col-lg-6 p-0 wow fadeInUp">
           {/* Contact List */}
-          <div className="container container-contact-list mr-auto m-0 p-lg-2">
-            <h2 id="contact-list-title">Estudio de Danzas Viviana Musso</h2>
+          <div className="container container-contact-list mr-auto m-0 p-lg-2 ">
+            <h2 id="contact-list-title ">Estudio de Danzas Viviana Musso</h2>
             <ul className="contact-list m-0 p-0 justify-items-start">
               <li className="contact-list-item contact-list-item-direccion">
                 Colón 315, Rafaela, Santa Fe

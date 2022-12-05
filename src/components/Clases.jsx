@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function Clases() {
   return (
-    <div className="container mt-3">
+    <div className="container my-5">
       <div
         className="text-center mx-auto mb-5 wow fadeInUp"
         data-wow-delay="0.1s"
@@ -22,6 +22,7 @@ function Clases() {
           <NavLink
             className="service-item d-block rounded text-center h-100 p-4"
             to="/iniciacion-a-la-danza"
+            onClick={() => window.scrollTo(0, 0)}
           >
             <img
               loading="lazy"
@@ -36,6 +37,7 @@ function Clases() {
           <NavLink
             className="service-item d-block rounded text-center h-100 p-4"
             to="/danza-clasica"
+            onClick={() => window.scrollTo(0, 0)}
           >
             <img
               loading="lazy"
@@ -50,6 +52,7 @@ function Clases() {
           <NavLink
             className="service-item d-block rounded text-center h-100 p-4"
             to="/danza-jazz"
+            onClick={() => window.scrollTo(0, 0)}
           >
             <img
               loading="lazy"
@@ -64,6 +67,7 @@ function Clases() {
           <NavLink
             className="service-item d-block rounded text-center h-100 p-4"
             to="/profesorado-danza-clasica"
+            onClick={() => window.scrollTo(0, 0)}
           >
             <img
               loading="lazy"
@@ -78,6 +82,7 @@ function Clases() {
           <NavLink
             className="service-item d-block rounded text-center h-100 p-4"
             to="/profesorado-danza-jazz"
+            onClick={() => window.scrollTo(0, 0)}
           >
             <img
               loading="lazy"

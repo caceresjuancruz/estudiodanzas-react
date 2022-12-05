@@ -12,8 +12,9 @@ function Main() {
       >
         <div
           id="header-carousel"
-          className="carousel slide carousel-fade"
+          className="carousel slide carousel-fade shadow"
           data-bs-ride="carousel"
+          style={{ borderBottom: "2px solid rgb(241, 72, 53)" }}
         >
           <div className="carousel-inner">
             <div className="carousel-item active">
@@ -22,6 +23,7 @@ function Main() {
                 className="w-100"
                 src="img/carousel1.jpg"
                 alt="Carousel 1"
+                style={{ filter: "blur(3px)", transform: "scale(1.1)" }}
               />
               <div className="carousel-caption">
                 <div className="p-3" style={{ maxWidth: "900px" }}>
@@ -40,6 +42,7 @@ function Main() {
                 className="w-100"
                 src="img/carousel2.jpg"
                 alt="Carousel 2"
+                style={{ filter: "blur(3px)", transform: "scale(1.1)" }}
               />
               <div className="carousel-caption">
                 <div className="p-3" style={{ maxWidth: "900px" }}>
@@ -58,6 +61,7 @@ function Main() {
                 className="w-100"
                 src="img/carousel3.jpg"
                 alt="Carousel 3"
+                style={{ filter: "blur(3px)", transform: "scale(1.1)" }}
               />
               <div className="carousel-caption">
                 <div className="p-3" style={{ maxWidth: "900px" }}>
@@ -76,6 +80,7 @@ function Main() {
                 className="w-100"
                 src="img/carousel4.jpg"
                 alt="Carousel 4"
+                style={{ filter: "blur(3px)", transform: "scale(1.1)" }}
               />
               <div className="carousel-caption">
                 <div className="p-3" style={{ maxWidth: "900px" }}>
@@ -160,92 +165,20 @@ function Main() {
 
       {/* Slider final Start */}
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        style={{ zIndex: 1000 }}
+      >
         <path
           fill="#f14835"
           fillOpacity="1"
           d="M0,320L1440,288L1440,320L0,320Z"
         ></path>
       </svg>
-      <section className="home">
-        <div className="container-slider-section pt-3">
-          <div className="home-text">
-            <p className="animate-text">
-              <span>Clases</span>
-              <span>Shows</span>
-              <span>Seminarios</span>
-              <span>Profesorados</span>
-            </p>
-          </div>
-        </div>
-      </section>
 
       <div className="container-wave pt-5">
-        <div className="container">
-          <div
-            className="text-center mx-auto wow fadeInUp"
-            data-wow-delay="0.1s"
-            style={{ maxWidth: "600px" }}
-          ></div>
-          <div className="container-fluid pb-5 wow fadeInUp">
-            <div className="row">
-              <div className="col-12 m-auto">
-                <div className="owl-carousel owl-theme">
-                  <div className="item mb-4">
-                    <div className="card border-0 shadow">
-                      <img
-                        loading="lazy"
-                        src="img/owl-carousel1.png"
-                        alt="Carousel 1"
-                        className="card-img-top"
-                      />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="card border-0 shadow">
-                      <img
-                        loading="lazy"
-                        src="img/owl-carousel2.png"
-                        alt="Carousel 2"
-                        className="card-img-top"
-                      />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="card border-0 shadow">
-                      <img
-                        loading="lazy"
-                        src="img/owl-carousel4.png"
-                        alt="Carousel 3"
-                        className="card-img-top"
-                      />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="card border-0 shadow">
-                      <img
-                        loading="lazy"
-                        src="img/owl-carousel5.png"
-                        alt="Carousel 4"
-                        className="card-img-top"
-                      />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="card border-0 shadow">
-                      <img
-                        loading="lazy"
-                        src="img/owl-carousel6.jpg"
-                        alt="Carousel 5"
-                        className="card-img-top"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div className="container"></div>
       </div>
       {/* Slider final End */}
     </div>

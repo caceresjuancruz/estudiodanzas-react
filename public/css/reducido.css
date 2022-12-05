@@ -21,7 +21,7 @@
   --bs-primary: #f14835;
   --bs-secondary: #777;
   --bs-success: #2fba44;
-  --bs-info: #0dcaf0;
+  --bs-info: #0e4e74;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f8f8;
@@ -1260,6 +1260,9 @@ iframe {
 }
 .bg-white {
   background-color: #fff !important;
+}
+.bg-info {
+  background-color: #0e4e74 !important;
 }
 .rounded {
   border-radius: 6px !important;

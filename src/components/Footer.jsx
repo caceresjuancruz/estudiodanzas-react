@@ -6,8 +6,9 @@ function Footer() {
     <div>
       {/* Footer Start */}
       <footer
-        className="container-fluid bg-dark text-body footer wow fadeIn"
+        className="container-fluid bg-dark text-body footer wow fadeIn sticky-bottom"
         data-wow-delay="0.1s"
+        style={{ zIndex: 1000 }}
       >
         <div className="container py-3">
           <div className="row g-5">
@@ -86,10 +87,10 @@ function Footer() {
               </NavLink>
               <NavLink
                 className="btn btn-link"
-                to="/show"
+                to="/shows"
                 onClick={() => window.scrollTo(0, 0)}
               >
-                Show
+                Shows
               </NavLink>
             </div>
           </div>
@@ -113,6 +114,7 @@ function Footer() {
         target="_BLANK"
         rel="noreferrer"
         className="btn btn-lg btn-success btn-lg-square rounded-circle btn-whatsapp"
+        style={{ zIndex: 1100 }}
       >
         <i className="bi bi-whatsapp"></i>
       </a>

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function ProfesoradoJazz() {
   return (
@@ -17,6 +18,12 @@ function ProfesoradoJazz() {
       {/* Page Header End */}
 
       {/* Feature Start */}
+      <NavLink
+        className="btn btn-sm btn-light fw-bold m-2 text-muted wow fadeInUp"
+        to="/clases"
+      >
+        〱Atrás
+      </NavLink>
       <div className="container-xxl py-5">
         <div className="container">
           <div className="row g-5">
@@ -102,6 +109,18 @@ function ProfesoradoJazz() {
         </div>
       </div>
       {/* Feature End */}
+      <style jsx="true">
+        {`
+          .col-lg-6 {
+            padding: 0;
+          }
+          @media (min-width: 992px) {
+            .col-lg-6 {
+              padding: 2rem;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 }
