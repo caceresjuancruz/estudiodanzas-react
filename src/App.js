@@ -14,6 +14,7 @@ import Clases from "./components/Clases";
 import Estudio from "./components/Estudio";
 import Shows from "./components/Shows";
 import Show from "./components/Show";
+import Show2 from "./components/Show2";
 import Page404 from "./components/Page404";
 
 var spinner = function () {
@@ -262,7 +263,7 @@ function App() {
         <Route path="/estudio" element={<Estudio />} />
         <Route path="/shows" element={<Shows />} />
         <Route path="/shows/funcion-1" element={<Show />} />
-        {/* <Route path="/shows/funcion-2" element={<Show />} /> */}
+        <Route path="/shows/funcion-2" element={<Show2 />} />
 
         <Route path="/iniciacion-a-la-danza" element={<Iniciacion />} />
         <Route path="/danza-clasica" element={<DanzaClasica />} />

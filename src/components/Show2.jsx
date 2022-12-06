@@ -2,8 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import emailjs from "@emailjs/browser";
-import { Oval } from "react-loader-spinner";
-import { Fragment } from "react";
 
 function Show() {
   const form = useRef();
@@ -24,7 +22,6 @@ function Show() {
       );
   };
 
-  const [isLoading, setIsLoading] = useState(true);
   const [arrayPlateaBaja, setArrayPlateaBaja] = useState([]);
   const [arrayPlateaAlta, setArrayPlateaAlta] = useState([]);
   const cantidadFilasPlateaBaja = [];
@@ -93,7 +90,7 @@ function Show() {
     if (butacaSeleccionadasPlateaBaja.length > 0) {
       axios
         .post(
-          "https://estudio-backend-production.up.railway.app/actualizar-ubicaciones-platea-baja",
+          "https://estudio-backend-production.up.railway.app/actualizar-ubicaciones-platea-baja-2",
           {
             ubicaciones: butacaSeleccionadasPlateaBaja,
             email: e.target.user_email.value,
@@ -125,7 +122,7 @@ function Show() {
     if (butacaSeleccionadasPlateaAlta.length > 0) {
       axios
         .post(
-          "https://estudio-backend-production.up.railway.app/actualizar-ubicaciones-platea-alta",
+          "https://estudio-backend-production.up.railway.app/actualizar-ubicaciones-platea-alta-2",
           {
             ubicaciones: butacaSeleccionadasPlateaAlta,
             email: e.target.user_email.value,
@@ -247,7 +244,7 @@ function Show() {
 
   useEffect(() => {
     fetch(
-      "https://estudio-backend-production.up.railway.app/butacas-platea-baja"
+      "https://estudio-backend-production.up.railway.app/butacas-platea-baja-2"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -258,7 +255,7 @@ function Show() {
       });
 
     fetch(
-      "https://estudio-backend-production.up.railway.app/butacas-platea-alta"
+      "https://estudio-backend-production.up.railway.app/butacas-platea-alta-2"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -267,7 +264,6 @@ function Show() {
       .catch(function (error) {
         console.log(error);
       });
-    setIsLoading(false);
   }, [triggerConfirmSuccess]);
 
   useEffect(() => {
@@ -280,7 +276,7 @@ function Show() {
         〱Atrás
       </NavLink>
       <h1 className="mt-3 display-4 fw-bold mb-0">
-        Selección de ubicaciones Show 2022 - 1° Función
+        Selección de ubicaciones Show 2022 - 2° Función
       </h1>
       <p className="text-dark display-6 fw-light mb-0">
         <u>Fecha:</u> 18/12
@@ -358,88 +354,67 @@ function Show() {
           ESCENARIO
         </div>
 
-        {isLoading ? (
-          <Oval
-            className=""
-            height={150}
-            width={150}
-            color="#4fa94d"
-            wrapperStyle={{}}
-            wrapperClass="justify-content-center my-5"
-            visible={true}
-            ariaLabel="oval-loading"
-            secondaryColor="#4fa94d"
-            strokeWidth={2}
-            strokeWidthSecondary={2}
-          />
-        ) : (
-          <Fragment>
-            {/*Butacas Start*/}
-            <h5 className="mx-3">Platea BAJA</h5>
-            {cantidadFilasPlateaBaja.map((fila) => (
-              <div className="row" key={fila}>
-                <div className="col-1">
-                  <div className="d-flex m-2 fila">
-                    <div className="">{fila}</div>
-                    {arrayPlateaBaja.map((butaca, index) =>
-                      butaca.fila === fila ? (
-                        <div
-                          className={
-                            butaca.disponible === 1
-                              ? "disable-highlighting mx-1 py-1 px-3 fw-bold text-white"
-                              : "disable-highlighting mx-1 py-1 px-3 fw-bold text-dark"
-                          }
-                          role="button"
-                          style={{
-                            backgroundColor: selectedBackground(butaca),
-                          }}
-                          key={index}
-                          onClick={(e) => handleSelectedButaca(e, butaca)}
-                        >
-                          {butaca.butaca}
-                        </div>
-                      ) : null
-                    )}
-                  </div>
-                </div>
+        <h5 className="mx-3">Platea BAJA</h5>
+        {cantidadFilasPlateaBaja.map((fila) => (
+          <div className="row" key={fila}>
+            <div className="col-1">
+              <div className="d-flex m-2 fila">
+                <div className="">{fila}</div>
+                {arrayPlateaBaja.map((butaca, index) =>
+                  butaca.fila === fila ? (
+                    <div
+                      className={
+                        butaca.disponible === 1
+                          ? "disable-highlighting mx-1 py-1 px-3 fw-bold text-white"
+                          : "disable-highlighting mx-1 py-1 px-3 fw-bold text-dark"
+                      }
+                      role="button"
+                      style={{
+                        backgroundColor: selectedBackground(butaca),
+                      }}
+                      key={index}
+                      onClick={(e) => handleSelectedButaca(e, butaca)}
+                    >
+                      {butaca.butaca}
+                    </div>
+                  ) : null
+                )}
               </div>
-            ))}
-            <h5 className="mx-3 border-1 border-dark border-top mt-2">
-              Platea ALTA
-            </h5>
-            {cantidadFilasPlateaAlta.map((fila) => (
-              <div className="row" key={fila}>
-                <div className="col-1">
-                  <div className="d-flex m-2 fila">
-                    <div className="">{fila}</div>
-                    {arrayPlateaAlta.map((butaca, index) =>
-                      butaca.fila === fila ? (
-                        <div
-                          className={
-                            butaca.disponible === 1
-                              ? "disable-highlighting mx-1 py-1 px-3 fw-bold text-white"
-                              : "disable-highlighting mx-1 py-1 px-3 fw-bold text-dark"
-                          }
-                          role="button"
-                          style={{
-                            backgroundColor: selectedBackground(butaca),
-                          }}
-                          key={index}
-                          onClick={(e) =>
-                            handleSelectedButacaPlateaAlta(e, butaca)
-                          }
-                        >
-                          {butaca.butaca}
-                        </div>
-                      ) : null
-                    )}
-                  </div>
-                </div>
+            </div>
+          </div>
+        ))}
+
+        <h5 className="mx-3 border-1 border-dark border-top mt-2">
+          Platea ALTA
+        </h5>
+        {cantidadFilasPlateaAlta.map((fila) => (
+          <div className="row" key={fila}>
+            <div className="col-1">
+              <div className="d-flex m-2 fila">
+                <div className="">{fila}</div>
+                {arrayPlateaAlta.map((butaca, index) =>
+                  butaca.fila === fila ? (
+                    <div
+                      className={
+                        butaca.disponible === 1
+                          ? "disable-highlighting mx-1 py-1 px-3 fw-bold text-white"
+                          : "disable-highlighting mx-1 py-1 px-3 fw-bold text-dark"
+                      }
+                      role="button"
+                      style={{
+                        backgroundColor: selectedBackground(butaca),
+                      }}
+                      key={index}
+                      onClick={(e) => handleSelectedButacaPlateaAlta(e, butaca)}
+                    >
+                      {butaca.butaca}
+                    </div>
+                  ) : null
+                )}
               </div>
-            ))}
-            {/*Butacas End*/}{" "}
-          </Fragment>
-        )}
+            </div>
+          </div>
+        ))}
       </div>
 
       <h6 className="mt-5 display-6 fw-bold">
@@ -498,7 +473,7 @@ function Show() {
           className="d-none"
           type="text"
           name="funcion"
-          defaultValue="Función 1"
+          defaultValue="Función 2"
         />
         <button
           type="submit"
