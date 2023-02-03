@@ -16,6 +16,8 @@ import Shows from "./components/Shows";
 import Show from "./components/Show";
 import Show2 from "./components/Show2";
 import Page404 from "./components/Page404";
+import Reglamento from "./components/Reglamento";
+import FormularioInscripcion from "./components/FormularioInscripcion";
 
 var spinner = function () {
   setTimeout(function () {
@@ -56,35 +58,7 @@ function App() {
           data-wow-delay="0.1s"
         >
           <div className="row gx-0 align-items-center d-none d-lg-flex">
-            <div className="col-lg-6 px-5 py-0 text-start">
-              <ol className="breadcrumb mb-0">
-                <li className="breadcrumb-item">
-                  <NavLink className="small text-secondary" to="/">
-                    Inicio
-                  </NavLink>
-                </li>
-                <li className="breadcrumb-item">
-                  <NavLink className="small text-secondary" to="/estudio">
-                    Estudio
-                  </NavLink>
-                </li>
-                <li className="breadcrumb-item">
-                  <NavLink className="small text-secondary" to="/clases">
-                    Clases
-                  </NavLink>
-                </li>
-                <li className="breadcrumb-item">
-                  <NavLink className="small text-secondary" to="/contacto">
-                    Contacto
-                  </NavLink>
-                </li>
-                <li className="breadcrumb-item">
-                  <NavLink className="small text-secondary" to="/shows">
-                    Shows
-                  </NavLink>
-                </li>
-              </ol>
-            </div>
+            <div className="col-lg-6 px-5 py-0 text-start"></div>
             <div className="col-lg-6 px-5 py-0 text-end">
               <small>Redes:</small>
               <div className="h-100 d-inline-flex align-items-center">
@@ -237,8 +211,22 @@ function App() {
                 Contacto
               </NavLink>
               <NavLink
-                to="/shows"
+                to="/reglamento"
                 className="nav-item nav-link"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Reglamento
+              </NavLink>
+              <NavLink
+                to="/inscripcion"
+                className="nav-item nav-link fw-bold inscripcion-button"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <b className="border rounded-5 p-3">¡Inscribite Aquí!</b>
+              </NavLink>
+              <NavLink
+                to="/shows"
+                className="nav-item nav-link d-none"
                 onClick={() => window.scrollTo(0, 0)}
               >
                 Shows
@@ -274,6 +262,8 @@ function App() {
         />
         <Route path="/profesorado-danza-jazz" element={<ProfesoradoJazz />} />
         <Route path="/*" element={<Page404 />} />
+        <Route path="/reglamento" element={<Reglamento />} />
+        <Route path="/inscripcion" element={<FormularioInscripcion />} />
       </Routes>
 
       {location.pathname !== "/shows/funcion-1" &&
@@ -282,7 +272,17 @@ function App() {
         <Footer />
       ) : null}
 
-      <style jsx="true">{``}</style>
+      <style jsx="true">{`
+        .inscripcion-button {
+          margin-top: 1rem;
+        }
+
+        @media (min-width: 992px) {
+          .inscripcion-button {
+            margin-top: 0;
+          }
+        }
+      `}</style>
     </div>
   );
 }

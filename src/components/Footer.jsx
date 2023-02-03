@@ -87,6 +87,20 @@ function Footer() {
               </NavLink>
               <NavLink
                 className="btn btn-link"
+                to="/reglamento"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Reglamento
+              </NavLink>
+              <NavLink
+                className="btn btn-link"
+                to="/inscripcion"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                ¡Inscribite Aquí!
+              </NavLink>
+              <NavLink
+                className="btn btn-link d-none"
                 to="/shows"
                 onClick={() => window.scrollTo(0, 0)}
               >

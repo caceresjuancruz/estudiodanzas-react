@@ -44,11 +44,15 @@ function Show() {
     useState([]);
 
   const [codigo, setCodigo] = useState("");
+
   const [triggerCodigoError, setTriggerCodigoError] = useState(false);
   const [triggerCodigoSuccess, setTriggerCodigoSuccess] = useState(false);
 
   const [triggerConfirmError, setTriggerConfirmError] = useState(false);
   const [triggerConfirmSuccess, setTriggerConfirmSuccess] = useState(false);
+
+  const [triggerConfirmErrorOccupated, setTriggerConfirmErrorOccupated] =
+    useState(false);
 
   useEffect(() => {
     if (codigo !== "") {
@@ -64,6 +68,7 @@ function Show() {
             setCantidadMisButacas(
               cantidadMisButacas + response.data[0].cantidad_butacas
             );
+
             //e.target.reset();
             setTriggerCodigoSuccess(true);
             setTimeout(() => {
@@ -91,30 +96,57 @@ function Show() {
     e.preventDefault();
 
     if (butacaSeleccionadasPlateaBaja.length > 0) {
+      const butacasParaVerificar = butacaSeleccionadasPlateaBaja.map(
+        (butaca) => {
+          return { fila: butaca.fila, butaca: butaca.butaca };
+        }
+      );
+
       axios
         .post(
-          "https://estudio-backend-production.up.railway.app/actualizar-ubicaciones-platea-baja",
+          "https://estudio-backend-production.up.railway.app/verificar-butacas-platea-baja",
           {
-            ubicaciones: butacaSeleccionadasPlateaBaja,
-            email: e.target.user_email.value,
-            nombre: e.target.user_nombre.value,
+            butacas: butacasParaVerificar,
           }
         )
         .then(function (response) {
-          if (
-            response.data === [] ||
-            butacaSeleccionadasPlateaBaja.length === 0
-          ) {
-            setTriggerConfirmError(true);
-            setTimeout(() => setTriggerConfirmError(false), 3500);
+          if (response.data.result) {
+            axios
+              .post(
+                "http://localhost:8000/actualizar-ubicaciones-platea-baja",
+                {
+                  ubicaciones: butacaSeleccionadasPlateaBaja,
+                  email: e.target.user_email.value,
+                  nombre: e.target.user_nombre.value,
+                }
+              )
+              .then(function (response) {
+                if (
+                  response.data.result === false ||
+                  butacaSeleccionadasPlateaBaja.length === 0
+                ) {
+                  setTriggerConfirmError(true);
+                  setTimeout(() => setTriggerConfirmError(false), 2500);
+                } else {
+                  setButacaSeleccionadasPlateaBaja([]);
+
+                  setTriggerConfirmSuccess(true);
+                  document.getElementById("alerta").style.display =
+                    "inline-block";
+                  window.scrollTo(0, document.body.scrollHeight);
+                  sendEmail();
+                  e.target.reset();
+                  setTimeout(() => setTriggerConfirmSuccess(false), 2500);
+                }
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
           } else {
-            setButacaSeleccionadasPlateaBaja([]);
-            setTriggerConfirmSuccess(true);
-            document.getElementById("alerta").style.display = "inline-block";
-            window.scrollTo(0, document.body.scrollHeight);
-            sendEmail();
-            e.target.reset();
-            setTimeout(() => setTriggerConfirmSuccess(false), 3500);
+            setTriggerConfirmErrorOccupated(true);
+            setTimeout(() => {
+              setTriggerConfirmErrorOccupated(false);
+            }, 2000);
           }
         })
         .catch(function (error) {
@@ -123,30 +155,57 @@ function Show() {
     }
 
     if (butacaSeleccionadasPlateaAlta.length > 0) {
+      const butacasParaVerificar = butacaSeleccionadasPlateaAlta.map(
+        (butaca) => {
+          return { fila: butaca.fila, butaca: butaca.butaca };
+        }
+      );
+
       axios
         .post(
-          "https://estudio-backend-production.up.railway.app/actualizar-ubicaciones-platea-alta",
+          "https://estudio-backend-production.up.railway.app/verificar-butacas-platea-alta",
           {
-            ubicaciones: butacaSeleccionadasPlateaAlta,
-            email: e.target.user_email.value,
-            nombre: e.target.user_nombre.value,
+            butacas: butacasParaVerificar,
           }
         )
         .then(function (response) {
-          if (
-            response.data === [] ||
-            butacaSeleccionadasPlateaAlta.length === 0
-          ) {
-            setTriggerConfirmError(true);
-            setTimeout(() => setTriggerConfirmError(false), 3500);
+          if (response.data.result) {
+            axios
+              .post(
+                "https://estudio-backend-production.up.railway.app/actualizar-ubicaciones-platea-alta",
+                {
+                  ubicaciones: butacaSeleccionadasPlateaAlta,
+                  email: e.target.user_email.value,
+                  nombre: e.target.user_nombre.value,
+                }
+              )
+              .then(function (response) {
+                if (
+                  response.data === [] ||
+                  butacaSeleccionadasPlateaAlta.length === 0
+                ) {
+                  setTriggerConfirmError(true);
+                  setTimeout(() => setTriggerConfirmError(false), 2500);
+                } else {
+                  setButacaSeleccionadasPlateaAlta([]);
+
+                  setTriggerConfirmSuccess(true);
+                  document.getElementById("alerta").style.display =
+                    "inline-block";
+                  window.scrollTo(0, document.body.scrollHeight);
+                  sendEmail();
+                  e.target.reset();
+                  setTimeout(() => setTriggerConfirmSuccess(false), 2500);
+                }
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
           } else {
-            setButacaSeleccionadasPlateaAlta([]);
-            setTriggerConfirmSuccess(true);
-            document.getElementById("alerta").style.display = "inline-block";
-            window.scrollTo(0, document.body.scrollHeight);
-            sendEmail();
-            e.target.reset();
-            setTimeout(() => setTriggerConfirmSuccess(false), 3500);
+            setTriggerConfirmErrorOccupated(true);
+            setTimeout(() => {
+              setTriggerConfirmErrorOccupated(false);
+            }, 2000);
           }
         })
         .catch(function (error) {
@@ -226,8 +285,8 @@ function Show() {
 
       if (
         event.target.style.backgroundColor === "rgb(13, 202, 240)" &&
-        butacaSeleccionadasPlateaAlta.length > 0 &&
-        butacaSeleccionadasPlateaBaja.length > 0
+        (butacaSeleccionadasPlateaAlta.length > 0 ||
+          butacaSeleccionadasPlateaBaja.length > 0)
       ) {
         let index = butacaSeleccionadasPlateaAlta.indexOf(butaca);
         setButacaSeleccionadasPlateaAlta((butacaSeleccionadas) =>
@@ -244,6 +303,33 @@ function Show() {
           : "#2FBA44";
     }
   }
+
+  // setInterval(() => {
+  //   fetch(
+  //     "https://estudio-backend-production.up.railway.app/butacas-platea-baja",
+  //
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setArrayPlateaBaja(data);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+
+  //   fetch(
+  //     "https://estudio-backend-production.up.railway.app/butacas-platea-alta",
+  //
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setArrayPlateaAlta(data);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  //   setIsLoading(false);
+  // }, 30000);
 
   useEffect(() => {
     fetch(
@@ -268,7 +354,13 @@ function Show() {
         console.log(error);
       });
     setIsLoading(false);
-  }, [triggerConfirmSuccess]);
+  }, [
+    triggerConfirmSuccess,
+    triggerConfirmErrorOccupated,
+    triggerConfirmError,
+    codigo,
+    cantidadMisButacas,
+  ]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -286,9 +378,12 @@ function Show() {
         <u>Fecha:</u> 18/12
       </p>
       <p className="text-dark display-6 fw-light">
-        <u>Horario:</u> 18pm a 19pm
+        <u>Horario:</u> 19:00
       </p>
 
+      <h2 className="mt-5 mb-3 fw-light">
+        Primero canjee su código y luego elija su ubicación:
+      </h2>
       <form onSubmit={(e) => handleCodigo(e)}>
         <input
           className={`form-control form-control-lg ${
@@ -300,6 +395,9 @@ function Show() {
           placeholder="Ingrese su Código"
           required
         />
+        <p className="text-danger mb-0 fs-6">
+          *Una vez canjeado el código NO refresque la página
+        </p>
         <button
           type="submit"
           className={`btn btn-lg btn-primary w-100 mt-1 ${
@@ -504,13 +602,19 @@ function Show() {
           type="submit"
           className={`btn btn-lg w-100 btn-primary mt-2 mb-3 ${
             triggerConfirmError ? "bg-white" : ""
+          } ${
+            triggerConfirmErrorOccupated
+              ? "border-danger bg-white text-danger"
+              : ""
           } ${triggerConfirmSuccess ? "bg-success border-success" : ""}`}
         >
           {triggerConfirmError
             ? "❌"
             : triggerConfirmSuccess
             ? "✅"
-            : "Canjear código"}
+            : triggerConfirmErrorOccupated
+            ? "Butaca No Disponible ❌"
+            : "Confirmar"}
         </button>
       </form>
       <div
