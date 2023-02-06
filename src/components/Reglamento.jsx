@@ -2,9 +2,9 @@ import React from "react";
 
 function Reglamento() {
   return (
-    <div className="container-fluid reglamento-container">
+    <div className="container-fluid reglamento-container mb-5">
       <div className="">
-        <h1 className="display-2">Reglamento</h1>
+        <h1 className="display-2 border-bottom ">REGLAMENTO</h1>
         <h2 className="fw-bold fs-1">
           <u>NORMAS DEL ESTUDIO DE DANZAS</u>
         </h2>
