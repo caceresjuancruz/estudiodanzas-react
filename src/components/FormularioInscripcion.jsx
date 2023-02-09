@@ -47,8 +47,10 @@ function FormularioInscripcion() {
       if (response.data.affectedRows === 1) {
         document.getElementById("textSuccess").style.display = "inline";
         document.getElementById("textError").style.display = "none";
-        document.getElementById("submitButton").style.backgroundColor = "green";
+        document.getElementById("submitButton").value = "";
         document.getElementById("submitButton").value = "Inscripción éxitosa ✓";
+        document.getElementById("submitButton").style.backgroundColor = "green";
+
         setTimeout(() => {
           document.getElementById("submitButton").style.backgroundColor =
             "#f14835";
@@ -136,8 +138,8 @@ function FormularioInscripcion() {
                   >
                     <div className="messages" id="form-messages"></div>
                     <div className="controls">
-                      <div className="row mt-2">
-                        <div className="col-md-6">
+                      <div className="row ">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group">
                             <label className="" htmlFor="nombreAlumna">
                               Nombre Alumna/o *
@@ -156,7 +158,7 @@ function FormularioInscripcion() {
                             <div className="help-block with-errors"></div>
                           </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group">
                             <label className="" htmlFor="apellidoAlumna">
                               Apellido Alumna/o *
@@ -176,8 +178,8 @@ function FormularioInscripcion() {
                           </div>
                         </div>
                       </div>
-                      <div className="row mt-2">
-                        <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group">
                             <label className="" htmlFor="domicilioAlumna">
                               Domicilio *
@@ -196,7 +198,7 @@ function FormularioInscripcion() {
                             <div className="help-block with-errors"></div>
                           </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group ">
                             <label className="" htmlFor="barrioAlumna">
                               Barrio *
@@ -216,8 +218,8 @@ function FormularioInscripcion() {
                           </div>
                         </div>
                       </div>
-                      <div className="row mt-2">
-                        <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group">
                             <label className="" htmlFor="celularAlumna">
                               Celular *
@@ -236,7 +238,7 @@ function FormularioInscripcion() {
                             <div className="help-block with-errors"></div>
                           </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group ">
                             <label className="" htmlFor="fechaNacimiento">
                               Fecha Nacimiento *
@@ -256,8 +258,8 @@ function FormularioInscripcion() {
                           </div>
                         </div>
                       </div>
-                      <div className="row mt-2">
-                        <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group">
                             <label className="" htmlFor="dni">
                               DNI *
@@ -276,7 +278,7 @@ function FormularioInscripcion() {
                             <div className="help-block with-errors"></div>
                           </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group ">
                             <label className="" htmlFor="edad">
                               Edad *
@@ -298,8 +300,8 @@ function FormularioInscripcion() {
                           </div>
                         </div>
                       </div>
-                      <div className="row mt-2">
-                        <div className="col-md-6">
+                      <div className="row">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group">
                             <label className="" htmlFor="obraSocial">
                               Obra Social *
@@ -318,7 +320,7 @@ function FormularioInscripcion() {
                             <div className="help-block with-errors"></div>
                           </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group ">
                             <label className="" htmlFor="idGrupoSanguineo">
                               Grupo Sanguineo *
@@ -348,8 +350,8 @@ function FormularioInscripcion() {
                         </div>
                       </div>
 
-                      <div className="row mt-2">
-                        <div className="col-md-12">
+                      <div className="row">
+                        <div className="col-md-12 mt-2">
                           <div className="form-group">
                             <label className="" htmlFor="observaciones">
                               Observaciones físicas, psíquicas, alergias:
@@ -370,8 +372,8 @@ function FormularioInscripcion() {
                       </div>
 
                       <div className="mt-4 border rounded-3 p-2">
-                        <div className="row mt-2">
-                          <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label className="" htmlFor="nombreMadre">
                                 Nombre de Madre
@@ -388,7 +390,7 @@ function FormularioInscripcion() {
                               <div className="help-block with-errors"></div>
                             </div>
                           </div>
-                          <div className="col-md-6">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label className="" htmlFor="direccionMadre">
                                 Direccion
@@ -406,8 +408,8 @@ function FormularioInscripcion() {
                           </div>
                         </div>
 
-                        <div className="row mt-2">
-                          <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label className="" htmlFor="celularMadre">
                                 Celular de Madre
@@ -424,7 +426,7 @@ function FormularioInscripcion() {
                               <div className="help-block with-errors"></div>
                             </div>
                           </div>
-                          <div className="col-md-6">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label className="" htmlFor="mailMadre">
                                 Mail de Madre
@@ -444,8 +446,8 @@ function FormularioInscripcion() {
                       </div>
 
                       <div className="mt-4 border rounded-3 p-2">
-                        <div className="row mt-2">
-                          <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label className="" htmlFor="nombrePadre">
                                 Nombre de Padre
@@ -462,7 +464,7 @@ function FormularioInscripcion() {
                               <div className="help-block with-errors"></div>
                             </div>
                           </div>
-                          <div className="col-md-6">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label className="" htmlFor="direccionPadre">
                                 Direccion
@@ -480,8 +482,8 @@ function FormularioInscripcion() {
                           </div>
                         </div>
 
-                        <div className="row mt-2">
-                          <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label className="" htmlFor="celularPadre">
                                 Celular de Padre
@@ -498,7 +500,7 @@ function FormularioInscripcion() {
                               <div className="help-block with-errors"></div>
                             </div>
                           </div>
-                          <div className="col-md-6">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label className="" htmlFor="mailPadre">
                                 Mail de Padre
@@ -518,8 +520,8 @@ function FormularioInscripcion() {
                       </div>
 
                       <div className="mt-4 border rounded-3 p-2">
-                        <div className="row mt-2">
-                          <div className="col-md-6">
+                        <div className="row">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label className="" htmlFor="emergenciaAvisarA">
                                 En caso de emergencia avisar a: *
@@ -538,7 +540,7 @@ function FormularioInscripcion() {
                               <div className="help-block with-errors"></div>
                             </div>
                           </div>
-                          <div className="col-md-6">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label className="" htmlFor="emergenciaTel">
                                 Telefono
@@ -554,7 +556,7 @@ function FormularioInscripcion() {
                               />
                             </div>
                           </div>
-                          <div className="col-md-6">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label className="" htmlFor="emergenciaCel">
                                 Celular *
@@ -573,7 +575,7 @@ function FormularioInscripcion() {
                               <div className="help-block with-errors"></div>
                             </div>
                           </div>
-                          <div className="col-md-6">
+                          <div className="col-md-6 mt-2">
                             <div className="form-group">
                               <label
                                 className=""
@@ -598,8 +600,8 @@ function FormularioInscripcion() {
                         </div>
                       </div>
 
-                      <div className="row mt-4">
-                        <div className="col-md-6">
+                      <div className="row mt-2">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group">
                             <label className="" htmlFor="idDisciplina">
                               Disciplina que cursa *
@@ -618,11 +620,12 @@ function FormularioInscripcion() {
                               <option value="1">Danza Clásica</option>
                               <option value="2">Danza Jazz</option>
                               <option value="3">Urbano</option>
+                              <option value="4">Iniciación a la Danza</option>
                             </select>
                             <div className="help-block with-errors"></div>
                           </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-2">
                           <div className="form-group">
                             <label className="" htmlFor="añoComienzo">
                               Año de comienzo *
@@ -643,10 +646,24 @@ function FormularioInscripcion() {
                           </div>
                         </div>
                         <div className="col-md-12 text-center">
+                          <p className="mt-4">
+                            Al confirmar la inscripción usted acepta las bases y
+                            condiciones mencionadas en el{" "}
+                            <a
+                              href="https://estudiodedanzasvivianamusso.com/#/reglamento"
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              Reglamento
+                            </a>{" "}
+                            del Estudio de Danzas Viviana Musso
+                          </p>
+                        </div>
+                        <div className="col-md-12 text-center">
                           <input
                             type="submit"
                             id="submitButton"
-                            className="btn btn-primary text-light fw-light mt-4 fs-2 rounded-5 px-4"
+                            className="btn btn-primary text-light fw-light fs-2 rounded-5 px-4"
                             value="Enviar inscripción"
                             style={{ minWidth: "300px" }}
                           />
