@@ -1,6 +1,9 @@
 import React from "react";
 
 function Estudio() {
+  const date = new Date();
+  const year = date.getFullYear();
+
   return (
     <div>
       {/* About Start */}
@@ -75,7 +78,8 @@ function Estudio() {
           <div className="col-lg-6 p-2 mt-0 wow fadeInUp" data-wow-delay="0.5s">
             <div className="h-100">
               <h1 className="display-6 mb-4">
-                <span className="text-primary">34 años</span> de trayectoria
+                <span className="text-primary">{year - 1988} años</span> de
+                trayectoria
               </h1>
               <p>
                 Desde 1988 el Estudio de Danzas Viviana Musso, ubicado en la

@@ -175,7 +175,7 @@ function Reglamento() {
             en su totalidad.
           </li>
           <li>
-            El año académico 2023 culmina el 21 de diciembre, el cual también se
+            El año académico culmina el 21 de diciembre, el cual también se
             abona en su totalidad.{" "}
           </li>
           <li>

@@ -18,6 +18,7 @@ import Show2 from "./components/Show2";
 import Page404 from "./components/Page404";
 import Reglamento from "./components/Reglamento";
 import FormularioInscripcion from "./components/FormularioInscripcion";
+import { inscriptionFormUrl } from "./utils/constants.ts";
 
 var spinner = function () {
   setTimeout(function () {
@@ -217,13 +218,15 @@ function App() {
               >
                 Reglamento
               </NavLink>
-              <NavLink
-                to="/inscripcion"
+              <a
+                href={inscriptionFormUrl}
+                rel="noreferrer"
+                target="_BLANK"
                 className="nav-item nav-link fw-bold inscripcion-button"
                 onClick={() => window.scrollTo(0, 0)}
               >
                 <b className="border rounded-5 p-3">¡Inscribite Aquí!</b>
-              </NavLink>
+              </a>
               <NavLink
                 to="/shows"
                 className="nav-item nav-link d-none"

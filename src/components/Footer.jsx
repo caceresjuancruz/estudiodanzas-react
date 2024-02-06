@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { inscriptionFormUrl } from "../utils/constants.ts";
 
 function Footer() {
   return (
@@ -92,13 +93,15 @@ function Footer() {
               >
                 Reglamento
               </NavLink>
-              <NavLink
+              <a
                 className="btn btn-link"
-                to="/inscripcion"
+                href={inscriptionFormUrl}
+                target="_blank"
+                rel="noreferrer"
                 onClick={() => window.scrollTo(0, 0)}
               >
                 ¡Inscribite Aquí!
-              </NavLink>
+              </a>
               <NavLink
                 className="btn btn-link d-none"
                 to="/shows"
